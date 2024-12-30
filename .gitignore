@@ -1,0 +1,52 @@
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*.log
+*.tlog
+*.lastbuildstate
+
+# NuGet
+*.nupkg
+packages/
+
+# Visual Studio Code
+.vscode/
+
+# Resharper
+_ReSharper*
+*.DotSettings.user
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# By default, don't include secrets
+appsettings.json
+appsettings.Development.json
+
+# Node.js (if applicable)
+node_modules/
+npm-debug.log*
+
+# Docker (if applicable)
+.dockerignore
+Dockerfile

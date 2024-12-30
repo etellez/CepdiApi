@@ -1,0 +1,19 @@
+﻿body {
+    background-color: #f8f9fa; /* Fondo claro */
+}
+
+h2 {
+    color: #007bff; /* Color principal para el título */
+}
+
+form {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff; /* Fondo blanco para el formulario */
+}
+
+img {
+    max-height: 400px; /* Altura máxima de la imagen */
+    object-fit: contain;
+}

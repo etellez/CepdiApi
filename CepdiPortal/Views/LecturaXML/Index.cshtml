@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Lectura XML y Consumo Web Service";
+}
+
+<link rel="stylesheet" href="/css/lecturaXML.css">
+
+<div class="container mt-5">
+    <h1 class="mb-4">Lectura XML y Consumo Web Service</h1>
+
+    <!-- Dropzone Form -->
+    <form action="/LecturaXML/ProcesarXML" class="dropzone" id="xmlDropzone">
+        <div class="dz-message">
+            Arrastra y suelta un archivo XML aquí o haz clic para seleccionarlo.
+        </div>
+    </form>
+</div>
+
+<script>
+    Dropzone.options.xmlDropzone = {
+        paramName: "file", // Nombre del parámetro esperado en el servidor
+        maxFiles: 1, // Permitir solo un archivo
+        acceptedFiles: ".xml", // Aceptar solo archivos XML
+        init: function () {
+            this.on("success", function (file, response) {
+                // Mostrar el PDF en una nueva ventana
+                const pdfWindow = window.open("");
+                pdfWindow.document.write(`
+                    <iframe width="100%" height="100%" src="data:application/pdf;base64,${response.pdfBase64}"></iframe>
+                `);
+            });
+            this.on("error", function (file, response) {
+                alert(`Error al procesar el archivo: ${response}`);
+            });
+        }
+    };
+
+</script>

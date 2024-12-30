@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Medicamentos";
+}
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between mb-3">
+        <h1>Lista de Medicamentos</h1>
+        <button class="btn btn-primary" id="btnCrearMedicamento">Crear Medicamento</button>
+    </div>
+    <table id="medicamentosTable" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Concentración</th>
+                <th>Forma Farmacéutica</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Presentación</th>
+                <th>Habilitado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<!-- Modal para Crear y Editar Medicamentos -->
+<div class="modal fade" id="medicamentoModal" tabindex="-1" aria-labelledby="medicamentoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="medicamentoModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="medicamentoForm">
+                    <input type="hidden" id="medicamentoId" />
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="concentracion" class="form-label">Concentración</label>
+                        <input type="text" class="form-control" id="concentracion" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="idFormaFarmaceutica" class="form-label">Forma Farmacéutica</label>
+                        <select id="idFormaFarmaceutica" class="form-select"></select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="precio" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="precio" step="0.01" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="stock" class="form-label">Stock</label>
+                        <input type="number" class="form-control" id="stock" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="presentacion" class="form-label">Presentación</label>
+                        <input type="text" class="form-control" id="presentacion" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="bHabilitado" class="form-label">Habilitado</label>
+                        <select id="bHabilitado" class="form-select">
+                            <option value="1">Sí</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" id="submitMedicamento">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal para Ver Medicamento -->
+<div class="modal fade" id="verMedicamentoModal" tabindex="-1" aria-labelledby="verMedicamentoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="verMedicamentoModalLabel">Detalles del Medicamento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>ID:</strong> <span id="verIdMedicamento"></span></p>
+                <p><strong>Nombre:</strong> <span id="verNombre"></span></p>
+                <p><strong>Concentración:</strong> <span id="verConcentracion"></span></p>
+                <p><strong>Forma Farmacéutica:</strong> <span id="verFormaFarmaceutica"></span></p>
+                <p><strong>Precio:</strong> <span id="verPrecio"></span></p>
+                <p><strong>Stock:</strong> <span id="verStock"></span></p>
+                <p><strong>Presentación:</strong> <span id="verPresentacion"></span></p>
+                <p><strong>Habilitado:</strong> <span id="verHabilitado"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/medicamentos.js"></script>
